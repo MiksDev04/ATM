@@ -1,0 +1,76 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+:root{
+    --money-background: #008000;
+    --money-border: #003a00;
+    --money-font-color: #f7f7f7;
+}
+
+.cash-wrapper{
+    bottom: 0;
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+}
+
+.cash-container{
+    cursor: grabbing;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    margin: 0 auto;
+    width: 70%;
+    aspect-ratio: 8/3;
+    padding: 3%;
+    background-color: var(--money-background);
+    top: 110%; 
+}
+.paper-money{
+    height: 100%;
+    width: 100%;
+    border: 3px solid var(--money-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.money-circle{
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--money-border);
+}
+.money-border{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--money-border);
+    color: var(--money-font-color);
+    font-size: 1.3rem;
+}
+
+@keyframes moneyOut {
+    0% {top: 110%;}
+    100% {top: 40%;}
+}
+
+@keyframes moneyIn {
+    0% {top: 40%;}
+    100% {top: 110%;}
+}
+
+@media (max-width: 500px) {
+    
+}

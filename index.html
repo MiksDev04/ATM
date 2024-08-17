@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="card-design.css" />
+    <link rel="stylesheet" href="process.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="atm-receipt.css" />
+    <link rel="stylesheet" href="cash.css" />
+    <script src="main.js" defer></script>
+    <title>ATM Application</title>
+</head>
+
+<body>
+    <div class="atm-container">
+        <main class="atm-container-wrapper">
+            <div class="top-wrapper">
+                <div class="upper-left-triangle"></div>
+                <div class="lighting"></div>
+                <div class="upper-right-triangle"></div>
+            </div>
+            <div class="middle-wrapper">
+                <div class="side-left-wrapper"></div>
+                <div class="center-wrapper">
+                    <div class="screen">
+                        <!-- visual goes here -->
+                        <div class="transfer-transaction-details">
+                            <div class="left-side">
+                                <h4>Confirm transaction details</h4>
+                            </div>
+                            <div class="right-side">
+                                <div class="transfer-details-list">
+                                    <p class="pin-of-receiver">Account no: 123456</p>
+                                    <p class="amount-to-transfer">Amount: $10,000</p>
+                                </div>
+                                <div class="transfer-options">
+                                    <button class="edit-transfer">Edit</button>
+                                    <button class="confirm-transfer">Confirm</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="side-right-wrapper"></div>
+            </div>
+            <div class="bottom-wrapper">
+                <div class="bottom-left-triangle"></div>
+                <div class="atm-controls">
+                    <div class="money-deposit">
+                        <div class="deposit-slot">
+                            <!-- money / cash -->
+                            <div class="cash-wrapper">
+                                <div class="cash-container">
+                                    <div class="paper-money1 paper-money">
+                                        <div class="circle1 money-circle"></div>
+                                        <div class="money-border">$</div>
+                                        <div class="circle2 money-circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="atm-buttons">
+                        <button value="1" class="num-buttons button1">1</button>
+                        <button value="2" class="num-buttons button2">2</button>
+                        <button value="3" class="num-buttons button3">3</button>
+                        <button value="4" class="num-buttons button4">4</button>
+                        <button value="5" class="num-buttons button5">5</button>
+                        <button value="6" class="num-buttons button6">6</button>
+                        <button value="7" class="num-buttons button7">7</button>
+                        <button value="8" class="num-buttons button8">8</button>
+                        <button value="9" class="num-buttons button9">9</button>
+                        <button value="0" class="num-buttons button10">0</button>
+                        <button value="." class="num-buttons button11">.</button>
+                        <button value="00" class="num-buttons button12">00</button>
+                    </div>
+                    <div class="choice-wrapper">
+                        <button class="cancel">Cancel</button>
+                        <button class="clear">Clear</button>
+                        <button class="enter">Enter</button>
+                    </div>
+                </div>
+                <div class="bottom-right-triangle"></div>
+            </div>
+        </main>
+        <aside class="atm-side-wrapper">
+            <h1>ATM</h1>
+            <h3>Receipt</h3>
+            <div class="receipt-slot">
+                <div class="receipt-slot-wrapper">
+                    <!-- atm receipt -->
+                    <div class="atm-receipt-container">
+                        <h5>Transaction Record</h5>
+                        <hr />
+                        <table class="transaction-records">
+                            <!-- <tr>
+                                <td class="transaction-activity">Deposit</td>
+                                <td class="transaction-money-amount">PHP 10,000</td>
+                            </tr>
+                            <tr>
+                                <td class="transaction-activity">Deposit</td>
+                                <td class="transaction-money-amount">PHP 10,000</td>
+                            </tr>
+                            <tr>
+                                <td class="transaction-activity">Deposit</td>
+                                <td class="transaction-money-amount">PHP 10,000</td>
+                            </tr>
+                            <tr>
+                                <td class="receipt-balance">Balance</td>
+                                <td class="receipt-amount-balance">PHP 40,000</td>
+                            </tr>
+                            <tr>
+                                <td class="transaction-date">07/09/24</td>
+                                <td class="exact-time-of-transaction">12:00 PM</td>
+                            </tr> -->
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <h3>Insert card</h3>
+            <div class="atm-card-slot">
+                <div class="card-slot-inside">
+                    <!-- atm card -->
+                    <div class="atm-card-container">
+                        <div class="card-wrapper">
+                            <h2 class="card-title">SUPER BANK</h2>
+                            <div class="card-chip"></div>
+                            <div class="card-number-pattern">
+                                <h3 class="pattern">0000</h3>
+                                <h3 class="pattern">4134</h3>
+                                <h3 class="pattern">0746</h3>
+                                <h3 class="pattern">8788</h3>
+                            </div>
+                            <div class="expiration-date">06/25</div>
+                            <div class="card-bottom">
+                                <h3 class="card-holder">Jane Doe</h3>
+                                <div class="network-logo">
+                                    <div class="card-blk1"></div>
+                                    <h4>CREDIT</h4>
+                                    <div class="card-blk2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+</body>
+
+</html>

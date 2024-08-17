@@ -1,0 +1,171 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* border box every element */
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+/* colors  of main element */
+:root{
+    --background: #0000f7a1;
+    --secondary: #c3c3e531;
+    --color: #f5f5f5;
+    --chip: gold;
+}
+
+.atm-card-container{
+    cursor: grabbing;
+    background-image: url('./Images/world-map-146505_1920.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 400px;
+    aspect-ratio: 5/3;
+    border-radius: 20px;
+    /* overflow: hidden; */
+    background-color: gray;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -20%) rotateX(70deg)  rotateZ(90deg);
+    animation: cardIn 2.5s linear paused;
+}
+
+@media (min-width: 808px){
+    @keyframes cardIn {
+        0%{
+            transform: translate(-50%, -20%) rotateX(70deg)  rotateZ(90deg);
+        }
+        90%{
+            transform: translate(-50%, -50%) rotateX(90deg)  rotateZ(90deg);
+        }
+        100%{
+            transform: translate(-50%, -50%) rotateX(90deg)  rotateZ(90deg);
+        }
+    }
+    @keyframes cardOut {
+        0%{
+            transform: translate(-50%, -50%) rotateX(90deg)  rotateZ(90deg);
+        }
+        20%{
+            transform: translate(-50%, -50%) rotateX(90deg)  rotateZ(90deg);
+        }
+        100%{
+            transform: translate(-50%, -20%) rotateX(70deg)  rotateZ(90deg);
+        }
+    }
+}
+
+
+
+
+
+
+.card-wrapper{
+    background-color: var(--background);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    position: relative;
+    color: white;
+    padding: 3%;
+    display: grid;
+    gap: .4rem;
+}
+.card-wrapper::after{
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    background-color:var(--secondary);
+    top: 0;
+    left: 0;
+    border-bottom-right-radius: 100%;
+}
+
+.card-chip{
+    position: relative;
+    width: 20%;
+    aspect-ratio: 1;
+    background-image: url('./Images/board-1295513_1920.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 1rem;
+}
+.card-number-pattern{
+    display: flex;
+    justify-content: space-evenly;
+}
+.card-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.card-expiration-date{
+    text-align: center;
+}
+.card-network-logo{
+    background-color: white;
+    padding: .2rem;
+    border-radius: 5px;
+    display: grid;
+    color: blue;
+    box-shadow: 1px 1px 3px black;
+}
+.card-blk1, .card-blk2{
+    width: 100%;
+    height: .2rem;
+}
+.card-blk1{
+    background-color: red;
+}
+.card-blk2{
+    background-color: yellow;
+}
+
+@media (max-width: 807px) {
+
+    .atm-card-container{
+        transform:  rotateZ(90deg);
+        height: 100px;
+        overflow: hidden;
+        width: 300px;
+    }
+    .card-wrapper::after{
+        width: 100%;
+    }
+    .atm-card-container .card-title{
+        font-size: 1rem;
+    }
+    .atm-card-container .pattern{
+        font-size: .6rem;
+    }
+
+      @keyframes cardIn {
+        0%{
+            transform: translate(-50%, -20%) rotateX(70deg)  rotateZ(90deg);
+        }
+        90%{
+            transform: translate(-50%, -50%) rotateX(90deg)  rotateZ(90deg);
+        }
+        100%{
+            transform: translate(-50%, -50%) rotateX(90deg)  rotateZ(90deg);
+        }
+    }
+    @keyframes cardOut {
+        0%{
+            transform: translate(-50%, -50%) rotateX(90deg)  rotateZ(90deg);
+        }
+        20%{
+            transform: translate(-50%, -50%) rotateX(90deg)  rotateZ(90deg);
+        }
+        100%{
+            transform: translate(-50%, -20%) rotateX(70deg)  rotateZ(90deg);
+        }
+    }
+}

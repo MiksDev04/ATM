@@ -1,0 +1,370 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+:root{
+    --main-background: #3d3d3d;
+    --secondary-background: #454545;
+    --dark-background: #222222;
+    --tertiary-background: #717171;
+    --lighting: #ffffaa; 
+    --screen: #f7f7f7;
+    --option-buttons: rgb(234, 234, 234);
+    --button-active: hsl(240, 100%, 59%);
+    --side-screen-background: rgb(77, 77, 255); 
+    --color: #f7f7f7;
+}
+
+/* welcome section */
+.welcome-message{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+}
+
+/* atm menu */
+.atm-menu-options{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 3%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.atm-menu-options .options{
+    display: grid;
+    place-content: center;
+}
+.options button{
+    background-color: var(--option-buttons);
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    transition: .3s;
+}
+.options button:active{
+    background-color: var(--button-active);
+    color: var(--color);
+}
+
+/* balance section */
+.balance-section, .view-account-balance, .account-balance-section,
+ .do-you-need-receipt, .deposit-transaction-details, .withdraw-cash-amount-option,
+ .enter-account-number-to-transfer, .enter-amount-to-transfer, .transfer-transaction-details{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+.left-side{
+    background-color: var(--side-screen-background);
+    color: var(--color);
+    padding: 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-spacing: 1rem;
+}
+.right-side{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#pin-number{
+    text-align: end;
+    padding: 0 .2rem;
+    width: 60%;
+}
+
+/* loading */
+.loading{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* view account */
+.view-account-balance .right-side{
+    flex-direction: column;
+    gap: 2rem;
+}
+.view-account-balance .right-side button{
+    width: 60%;
+    background-color: var(--option-buttons);
+    padding: .5rem;
+    border: none;
+    border-radius: 5px;
+    transition: .3s;
+}
+.view-account-balance .right-side button:active{
+    background-color: var(--button-active);
+    color: var(--color);
+}
+
+/* account balance section */
+.account-balance-section .right-side{
+    display: grid;
+    text-align: center;
+    place-content: center;
+    gap: 2rem;
+}
+.after-account-balance-option{
+    display: grid;
+    gap: 1rem;
+}
+.account-balance-section .right-side button{
+    background-color: var(--option-buttons);
+    padding: .5rem;
+    border: none;
+    border-radius: 5px;
+    transition: .3s;
+}
+.account-balance-section .right-side button:active{
+    background-color: var(--button-active);
+    color: var(--color);
+}
+
+/* money to deposit wrapper */
+.money-to-deposit-wrapper{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inset: 0;
+    background-color: var(--secondary-background);
+}
+.deposit-money-display{
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15%;
+    width: clamp(300px, 60%, 500px);
+    aspect-ratio: 5/3;
+    border-radius: 40px;
+    background-color: var(--screen);
+}
+.deposit-money-display h2{
+    width: 100%;
+    text-align: center;
+}
+.deposit-money-display p{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    height: 20%;
+    width: 100%;
+}
+#cash-deposit{
+    text-align: end;
+    aspect-ratio: 20/2.5;
+    height: 100%;
+    padding: 0 1rem;
+    font-size: 1.3rem;
+}
+#cash-deposit:focus{
+    outline: none;
+}
+.deposit-money-display button{
+    background-color: var(--option-buttons);
+    padding: .5rem;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: .3s;
+}
+.deposit-money-display button:active{
+    background-color: var(--button-active);
+    color: var(--color);
+}
+#cash-deposit::-webkit-outer-spin-button,
+#cash-deposit::-webkit-inner-spin-button{
+    display: none;
+}
+
+/* do you need a print receipt after depositing money? */
+.do-you-need-receipt .right-side{
+    display: grid;
+    place-content: center;
+    gap: 1rem;
+}
+.do-you-need-receipt button{
+    padding: .5rem 1rem;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+.do-you-need-receipt button:active{
+    background-color: var(--button-active);
+    color: var(--color);
+}
+
+
+/* deposit transaction details */
+.deposit-transaction-details .right-side{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+    gap: 5%;
+}
+.deposit-transaction-details .right-side ul{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    width: 80%;
+    list-style: none;
+}
+.deposit-transaction-details .right-side ul li{
+    font-size: .8rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.deposit-transaction-details .right-side ul li:last-child{
+    margin-top: auto;
+    padding: .25rem;
+    border-top: 2px dotted var(--secondary-background);
+}
+.deposit-transaction-details .deposit-options{
+    display: flex;
+    gap: 1rem;
+}
+.deposit-transaction-details .deposit-options button{
+    height: auto;
+    aspect-ratio: 5/1;
+    background-color: var(--option-buttons);
+    padding: .5rem;
+    border: none;
+    margin-top: auto;
+    border-radius: 5px;
+    transition: .3s;
+}
+.deposit-transaction-details .deposit-options button:active{
+    background-color: var(--button-active);
+    color: var(--color);
+}   
+
+
+/* withdraw cash amount option */
+.withdraw-cash-amount-option .right-side{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 3%;
+    gap: 5%;
+}
+.withdraw-cash-amount-option .right-side p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .8rem;
+    gap: 5%;
+    height: 15%;
+}
+#cash-amount-withdraw , #amount-to-transfer{
+    width: 80%;
+    text-align: end;
+    height: 90%;
+    padding: 0 1rem;
+}
+#cash-amount-withdraw:focus{
+    outline: none;
+}
+.withdraw-cash-amount-option .cash-option{
+    height: 85%;
+    display: grid;
+    width: 80%;
+    place-items: center;
+    grid-template-columns: repeat(2 , 1fr);
+}
+.withdraw-cash-amount-option .cash-option button{
+    width: 60%;
+    align-content: center;
+    align-self: center;
+    background-color: var(--option-buttons);
+    padding: .25rem;
+    border: none;
+    margin-top: auto;
+    border-radius: 5px;
+    transition: .3s;
+}
+.withdraw-cash-amount-option .cash-option button:active{
+    background-color: var(--button-active);
+    color: var(--color);
+}
+
+/* transfer transaction details */
+.transfer-transaction-details .right-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3%;
+    gap: 5%;
+
+}
+.transfer-details-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    flex-direction: column;
+    gap: 1rem;
+}
+.transfer-options{
+    display: flex;
+    gap: 1rem;
+}
+.transfer-options button{
+    height: auto;
+    aspect-ratio: 5/1;
+    background-color: var(--option-buttons);
+    padding: .5rem;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: .3s;
+}
+.transfer-options button:active{
+    background-color: var(--button-active);
+    color: var(--color);
+}
+
+@media (max-width: 500px) {
+    .options button, .choice-wrapper{
+        font-size: 1rem;
+    }
+    .left-side{
+        font-size: .7rem;
+    }
+    button{
+        font-size: .6rem;
+        padding: .1rem .2rem;
+    }
+    p{
+        font-size: .6rem;
+    }
+    .deposit-transaction-details .deposit-options button{
+        padding: .2rem .5rem;
+        font-size: .6rem;
+    }
+    .do-you-need-receipt button{
+        padding: .2rem .5rem;
+        font-size: 1rem;
+    }
+    .transfer-options button{
+        aspect-ratio: 5/1;
+        padding: .2rem .5rem;
+        font-size: .6rem;
+    }
+}

@@ -1,0 +1,252 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+:root{
+    --main-background: #3d3d3d;
+    --secondary-background: #454545;
+    --dark-background: #222222;
+    --tertiary-background: #717171;
+    --lighting: #ffffaa; 
+    --screen: #f7f7f7;
+    --buttons: #f1f1f1;
+    --color: #f7f7f7;
+}
+body{
+    background-color: var(--main-background);
+    min-height: 100dvh;
+}
+
+/* whole container */
+.atm-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3% 6%;
+    gap: 1.5% ;
+    overflow: hidden;
+}
+.atm-container-wrapper{
+    background-color: var(--secondary-background);
+    flex: 2 1 500px;
+    display: flex;
+    flex-direction: column;
+}   
+
+/* top */
+.top-wrapper{
+    overflow: hidden;
+    width: 100%;
+    height: 10%;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;    
+}
+.lighting{
+    align-content: center;
+    background-color: var(--lighting);
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgb(255, 246, 194);
+    width: 50%;
+    margin: 2% auto;
+    height: 1rem;
+}
+.upper-left-triangle, .upper-right-triangle{
+    background-color: var(--dark-background);
+    position: relative;
+}
+.upper-left-triangle::before, .upper-right-triangle::before{
+    --adjust: 100%;
+    content: '';
+    width: 200%;
+    z-index: 1;
+    height: 100%;
+    transform: translateY(-6px) rotateZ(33deg);
+    background-color: var(--secondary-background);
+    position: absolute;
+}
+.upper-right-triangle::before{
+    right: 0;
+    transform: translateY(-6px) rotateZ(147deg);
+}
+
+
+
+/* middle */
+.middle-wrapper{
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    z-index: 11;
+}
+.side-right-wrapper, .side-left-wrapper{
+    background-color: var(--dark-background);
+}
+
+/* center */
+.center-wrapper{
+    background-color: var(--tertiary-background);
+    display: grid;
+    grid-template-rows: 90% auto;
+    padding: 1rem;
+    gap: 1rem;
+    min-height: 300px;
+}
+.screen{
+    background-color: var(--screen);
+}
+
+/* buttons */
+.bottom-wrapper{
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+}
+.atm-controls{
+    perspective: 900px;
+    padding: 2rem;
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.money-deposit{
+    position: relative;
+    margin:  0 auto;
+    height: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    transform: rotateX(45deg);
+}
+.deposit-slot{
+    width: 50%;
+    border: 4px solid var(--dark-background) ;
+    height: 1rem;
+    transition: .5s;
+    position: relative;
+}
+.atm-buttons{
+    width: 65%;
+    height: 100%;
+    transform: rotateX(45deg);
+    display: grid;
+    gap: .2rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+.atm-buttons button{
+    padding: .2rem .4rem;
+}
+.choice-wrapper{
+    width: 30%;
+    transform:rotateX(45deg);
+    display: grid;
+    gap: .2rem;
+}
+.bottom-wrapper button{
+    font-size: 1.1rem;
+}
+.bottom-wrapper button:active{
+    transition: .5s ;
+    background-color: gray;
+}
+
+.bottom-right-triangle, .bottom-left-triangle{
+    overflow: hidden;
+    background-color: var(--dark-background);
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.bottom-right-triangle::before, .bottom-left-triangle::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 150%;
+    background-color: var(--secondary-background);
+    transform: translateX(-20px) rotateZ(157deg);
+}
+.bottom-left-triangle::before{
+    left: 0;
+    transform: translateX(20px) rotateZ(23deg);
+}
+
+
+
+/* side content */
+.atm-side-wrapper{
+    overflow: hidden;
+    color: var(--color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    align-items: center;
+    flex: 2 1 200px;
+    top: 0;
+}
+.atm-side-wrapper h1{
+    font-size: 3rem;
+}
+.atm-side-wrapper h2{
+    font-size: 2rem;
+}
+.receipt-slot{
+    perspective: 1000px;
+    width: 300px;
+    height: 1rem;
+    background-color: var(--dark-background);
+    position: relative;
+}
+.receipt-slot-wrapper{
+    top: .5rem;
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+.atm-side-wrapper > h3:nth-child(4){
+    padding-top: 2rem;
+}
+.atm-card-slot{
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 1rem;
+    background-color: var(--screen);
+}
+.card-slot-inside{
+    width: 90%;
+    height: .5rem;
+    background-color: var(--dark-background);
+    position: relative;
+    perspective: 900px;
+}
+
+@media (max-width: 807px) {
+    .atm-side-wrapper{
+        flex-direction: row;
+    }
+    .atm-side-wrapper h1, .atm-side-wrapper h3{
+        display: none;
+    }
+    .atm-controls{
+        padding: 1rem;
+    }
+    .center-wrapper{
+        min-height: 200px;
+    }
+    .screen{
+        overflow: hidden;
+    }
+    .atm-side-wrapper{
+        height: 200px;    
+    }
+    .card-slot-inside{
+        perspective: none;
+    }
+}

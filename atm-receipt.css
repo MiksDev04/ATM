@@ -1,0 +1,83 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+:root{
+    --main-background: #3d3d3d;
+    --secondary-background: #454545;
+    --dark-background: #222222;
+    --tertiary-background: #717171;
+    --lighting: #ffffaa; 
+    --screen: #f7f7f7;
+    --option-buttons: rgb(234, 234, 234);
+    --button-active: hsl(240, 100%, 59%);
+    --side-screen-background: rgb(77, 77, 255); 
+    --color: #f7f7f7;
+}
+
+.atm-receipt-container{
+    cursor: grabbing;
+    padding: .5rem;
+    top: -50%;
+    width: 250px;
+    position: absolute;
+    display: grid;
+    gap: .5rem;
+    left: 50%;
+    background-color: var(--screen);
+    color: var(--main-background);
+    transform: translateX(-50%);
+}
+.atm-receipt-container h5{
+    border-top: 2px dotted var(--dark-background);
+    padding-top: .2rem;
+}
+.transaction-records{
+    font-size: .8rem;
+    display: grid;
+    gap: 1rem;
+}
+.transaction-records tr{
+    display: flex;
+    justify-content: space-between;
+}
+.transaction-records tr:nth-last-child(2){
+    margin-top: 1rem;
+    border-top: 2px dotted var(--dark-background);
+}
+.transaction-records tr:last-child{
+    font-size: .6rem;
+    color: var(--tertiary-background);
+}
+
+@keyframes receiptOut {
+    0%{
+        top: -50%;
+    }
+    90%{
+        top: -5%;
+    }
+    100%{
+        top: 0;
+    }
+}
+
+@media (max-width: 807px) {
+    .atm-receipt-container{
+        width: 90%;
+    }
+    .atm-receipt-container h5{
+        font-size: .6rem;
+    }
+    .transaction-records{
+        overflow:visible;
+        font-size: .5rem;
+        display: grid;
+        gap: 1rem;
+    }
+}
